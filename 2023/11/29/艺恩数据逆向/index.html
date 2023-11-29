@@ -9,7 +9,7 @@
     
     <title>
         
-            新东方培训班逆向 |
+            艺恩电影逆向 |
         
         黑羽快斗
     </title>
@@ -135,7 +135,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        新东方培训班逆向
+                        艺恩电影逆向
                     </div>
                 
 
@@ -164,16 +164,25 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-29 00:37:30</span>
-                <span class="mobile">2023-11-29 00:37</span>
+                <span class="pc">2023-11-29 17:21:38</span>
+                <span class="mobile">2023-11-29 17:21</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Nov 29 2023 17:07:23 GMT+0800">2023-11-29 17:07:23</span>
+                <span class="pc" data-updated="Wed Nov 29 2023 17:23:39 GMT+0800">2023-11-29 17:23:39</span>
             </span>
         
 
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">响应解密</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
@@ -209,46 +218,90 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h3 id="一、新东方培训班新东方培训班-新东方辅导课程-新东方搜课平台-xdf-cn"><a href="#一、新东方培训班新东方培训班-新东方辅导课程-新东方搜课平台-xdf-cn" class="headerlink" title="一、新东方培训班新东方培训班_新东方辅导课程 - 新东方搜课平台 (xdf.cn)"></a>一、新东方培训班<a class="link"   target="_blank" rel="noopener" href="https://souke.xdf.cn/search?cityCode=500100&categoryCode=54" >新东方培训班_新东方辅导课程 - 新东方搜课平台 (xdf.cn)<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的值："><a href="#1-需要逆向的值：" class="headerlink" title="1.需要逆向的值："></a>1.需要逆向的值：</h4><ul>
-<li>请求头Sign签名；</li>
+                    <h3 id="一、艺恩艺恩-数据智能服务商-年度票房-endata-com-cn"><a href="#一、艺恩艺恩-数据智能服务商-年度票房-endata-com-cn" class="headerlink" title="一、艺恩艺恩-数据智能服务商_年度票房 (endata.com.cn)"></a>一、艺恩<a class="link"   target="_blank" rel="noopener" href="https://www.endata.com.cn/BoxOffice/BO/Year/index.html" >艺恩-数据智能服务商_年度票房 (endata.com.cn)<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的值："><a href="#1-需要逆向的值：" class="headerlink" title="1.需要逆向的值："></a>1.需要逆向的值：</h4><ul>
+<li>响应解密</li>
 </ul>
 <h4 id="2-逆向过程："><a href="#2-逆向过程：" class="headerlink" title="2.逆向过程："></a>2.逆向过程：</h4><ul>
-<li>在此案例，很显然，可以通过关键词来搜索，但不用看这个词就很多，所以直接搜索路径再进行关键字搜索；</li>
-<li>搜索后进行定位，成功断住，断住后往下走一步，查看返回的sign是否是我们需要的值，运行后将其放掉，再去查看新发的包，可以看到这就是我们需要的东西；</li>
+<li>首先我们分析过后可以看出其堆栈是有一个ajax，在这种情况可以搜索JSON.parse(来找，搜索后发现数据有些多，所以我们先搜索其路径，再进行关键字搜索；</li>
+<li>搜索后打上断点，进行年份的切换；</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\新东方img\1"
-                      alt="image-20231116222051100" style="zoom:67%;" 
+                     data-src="\艺恩img\1"
+                      alt="image-20231116212336278" style="zoom:67%;" 
                 >
 
 <ul>
-<li>那么Re就是我们的主体加密；进入其内部查看；</li>
+<li><p>可以看出，e是我们的密文值，通过调试可以看出第二个为真正的解密方法，</p>
+</li>
+<li><p>选中进入整个函数，发现其是混淆的，那就没有那么好辨别了；</p>
+</li>
+<li><p>此时打上断点，通过刷新来进行断点，此时须将前面的断点给释放；之后再来进行调试；</p>
+</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\新东方img\2"
-                      alt="image-20231116223356750" style="zoom:67%;" 
+                     data-src="\艺恩img\2"
+                      alt="d607ef0d0bc9dcae6859a8c7d20a8b5a" style="zoom:67%;" 
                 >
 
+
+
 <ul>
-<li>通过这里其实我们就可以发现，它进行了四次填充，所以他其实是md5加密；</li>
-<li>所以我们直接将拼接后的数据取下来，再进行加密即可；</li>
+<li>断住后执行单步调试，来看看程序是怎么走的；断点位置一定要对，因为经过调试程序是直接走到了var这一步，所以当我们断在this处时就没法正常的走；</li>
+<li>逐渐单步调试，观察作用域何时出现相应的密文值；</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\新东方img\3"
-                      alt="image-20231116223730853" style="zoom:67%;" 
+                     data-src="\艺恩img\3"
+                      alt="image-20231116215149420" style="zoom:67%;" 
                 >
 
 <ul>
-<li>整体代码如下：</li>
+<li>当出现密文值时，可以进行观察，框住的地方很像我们某一个加密方式(对称加密)，将他们扣下来进行验证，在控制台输出时始终无法正确的输出，此时我们新建代码段，将这段代码复制过去，使用ctrl+s保存后运行，此时可以在控制台看到我们的明文结果；</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const CryptJS = require(&#x27;crypto-js&#x27;)</span><br><span class="line"></span><br><span class="line">md5_des = CryptJS.MD5(&#x27;appId=5053&amp;cityCode=500100&amp;t=1700145342864&amp;pageIndex=4&amp;pageSize=12&amp;categoryCode=54&amp;order=0750F82C2-D8F6-49F6-878C-1E7EBEBC8DA2&#x27;).toString();</span><br><span class="line">console.log(md5_des);</span><br></pre></td></tr></table></figure>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="\艺恩img\4"
+                      alt="image-20231116215448390" style="zoom:67%;" 
+                >
 
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="\艺恩img\5"
+                      alt="image-20231116215604192" style="zoom:67%;" 
+                >
+
+<ul>
+<li>经过简单的调试我们可以知道，这就是一个DES加密，</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="\艺恩img\6"
+                      alt="image-20231116215932096" style="zoom:67%;" 
+                >
+
+<ul>
+<li>在这里由于是混淆的，我们选择将整个文件的代码都扣下来，因为它们其实是为一个整体；</li>
+<li>接下来执行webInstace.shell方法，为何会调用shell方法，是因为在此前调试的时候，我们在控制台执行混淆的代码时发现后续的混淆其实是shell方法；</li>
+<li>运行后报错navigator，其实这是由于环境的问题，在控制台输出后即可进行补环境操作，我测试过后，只补上ua即可；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="\艺恩img\7"
+                      alt="image-20231116220910284" style="zoom:67%;" 
+                >
+
+<ul>
+<li>至此数据解密完成；</li>
+</ul>
 
                 </div>
 
@@ -258,11 +311,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                新东方培训班逆向
+                艺恩电影逆向
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/11/29/新东方逆向/
+                2023/11/29/艺恩数据逆向/
             </div>
         </div>
 
@@ -278,7 +331,7 @@
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-11-29 00:37</div>
+                <div class="content">2023-11-29 17:21</div>
             </div>
 
 
@@ -351,31 +404,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/29/%E8%89%BA%E6%81%A9%E6%95%B0%E6%8D%AE%E9%80%86%E5%90%91/"
-                                   title="艺恩电影逆向"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">艺恩电影逆向</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/29/%E7%83%AF%E7%89%9B%E6%95%B0%E6%8D%AE%E9%80%86%E5%90%91/"
-                                   title="烯牛数据逆向"
+                                   href="/2023/11/29/%E6%96%B0%E4%B8%9C%E6%96%B9%E9%80%86%E5%90%91/"
+                                   title="新东方培训班逆向"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">烯牛数据逆向</span>
+                                        <span class="post-nav-title-item text-ellipsis">新东方培训班逆向</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -403,7 +440,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%96%B0%E4%B8%9C%E6%96%B9%E5%9F%B9%E8%AE%AD%E7%8F%AD%E6%96%B0%E4%B8%9C%E6%96%B9%E5%9F%B9%E8%AE%AD%E7%8F%AD-%E6%96%B0%E4%B8%9C%E6%96%B9%E8%BE%85%E5%AF%BC%E8%AF%BE%E7%A8%8B-%E6%96%B0%E4%B8%9C%E6%96%B9%E6%90%9C%E8%AF%BE%E5%B9%B3%E5%8F%B0-xdf-cn"><span class="nav-number">1.</span> <span class="nav-text">一、新东方培训班新东方培训班_新东方辅导课程 - 新东方搜课平台 (xdf.cn)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%80%BC%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的值：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%89%BA%E6%81%A9%E8%89%BA%E6%81%A9-%E6%95%B0%E6%8D%AE%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%95%86-%E5%B9%B4%E5%BA%A6%E7%A5%A8%E6%88%BF-endata-com-cn"><span class="nav-number">1.</span> <span class="nav-text">一、艺恩艺恩-数据智能服务商_年度票房 (endata.com.cn)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%80%BC%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的值：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -544,7 +581,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%96%B0%E4%B8%9C%E6%96%B9%E5%9F%B9%E8%AE%AD%E7%8F%AD%E6%96%B0%E4%B8%9C%E6%96%B9%E5%9F%B9%E8%AE%AD%E7%8F%AD-%E6%96%B0%E4%B8%9C%E6%96%B9%E8%BE%85%E5%AF%BC%E8%AF%BE%E7%A8%8B-%E6%96%B0%E4%B8%9C%E6%96%B9%E6%90%9C%E8%AF%BE%E5%B9%B3%E5%8F%B0-xdf-cn"><span class="nav-number">1.</span> <span class="nav-text">一、新东方培训班新东方培训班_新东方辅导课程 - 新东方搜课平台 (xdf.cn)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%80%BC%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的值：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%89%BA%E6%81%A9%E8%89%BA%E6%81%A9-%E6%95%B0%E6%8D%AE%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%95%86-%E5%B9%B4%E5%BA%A6%E7%A5%A8%E6%88%BF-endata-com-cn"><span class="nav-number">1.</span> <span class="nav-text">一、艺恩艺恩-数据智能服务商_年度票房 (endata.com.cn)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%80%BC%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的值：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
     </div>
 </div>
 
