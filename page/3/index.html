@@ -25,7 +25,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
-    KEEP.theme_config = {"base_info":{"primary_color":"#00CCFF","title":"黑羽快斗","author":"黑羽快斗","avatar":"/images/id11.svg","logo":"/images/id11.svg","favicon":"/images/id11.svg"},"menu":{"Home":"/"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"JS逆向案例","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/heiyukuaidou23/","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":"逆向之路漫长且枯燥"},"post":{"author_badge":{"enable":true,"level_badge":false,"custom_badge":"爬虫逆向"},"word_count":{"wordcount":false,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz","appkey":"ecMeJbcMnBCMLJCsoMzBiL3Q","server_urls":"https://gsbcfirr.lc-cn-n1-shared.com","placeholder":"有问题敬请留言"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"unpkg"},"pjax":{"enable":false},"footer":{"since":2023,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":true,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.1"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#00CCFF","title":"黑羽快斗","author":"黑羽快斗","avatar":"/images/id11.svg","logo":"/images/id11.svg","favicon":"/images/id11.svg"},"menu":{"Home":"/"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"JS逆向案例","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/heiyukuaidou23/","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":"逆向就是找算法"},"post":{"author_badge":{"enable":true,"level_badge":false,"custom_badge":"爬虫逆向"},"word_count":{"wordcount":false,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz","appkey":"ecMeJbcMnBCMLJCsoMzBiL3Q","server_urls":"https://gsbcfirr.lc-cn-n1-shared.com","placeholder":"有问题敬请留言"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"unpkg"},"pjax":{"enable":false},"footer":{"since":2023,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":true,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -121,11 +121,447 @@
     
         <div class="website-announcement border-box">
             <i class="icon left fa-solid fa-bullhorn"></i>
-            <span class="announcement border-box text-ellipsis">逆向之路漫长且枯燥</span>
+            <span class="announcement border-box text-ellipsis">逆向就是找算法</span>
             <i class="icon right close fa-solid fa-close"></i>
         </div>
     
     <ul class="home-article-list border-box">
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
+                        <a href="/2023/11/29/36kr%E9%80%86%E5%90%91/">
+                            36氪逆向
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            一、36氪看《完蛋！我被美女包围了》如何教“影视综”做人-36氪 (36kr.com)1.需要逆向的值：
+在静态页面里的响应加密；
+
+2.逆向过程；
+在数据接口中，我们找不到数据的返回，那么此时我们就可以怀疑是不是在静态页面藏着了，往下找，可以找到一...
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:36:10 GMT+0800">2023-11-29 17:36:10</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">响应解密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/2023/11/29/36kr%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
+                        <a href="/2023/11/29/%E8%89%BA%E6%81%A9%E6%95%B0%E6%8D%AE%E9%80%86%E5%90%91/">
+                            艺恩电影逆向
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            一、艺恩艺恩-数据智能服务商_年度票房 (endata.com.cn)1.需要逆向的值：
+响应解密
+
+2.逆向过程：
+首先我们分析过后可以看出其堆栈是有一个ajax，在这种情况可以搜索JSON.parse(来找，搜索后发现数据有些多，所以我们先搜索其...
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:39:39 GMT+0800">2023-11-29 17:39:39</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">响应解密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/2023/11/29/%E8%89%BA%E6%81%A9%E6%95%B0%E6%8D%AE%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
+                        <a href="/2023/11/29/%E6%96%B0%E4%B8%9C%E6%96%B9%E9%80%86%E5%90%91/">
+                            新东方培训班逆向
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            一、新东方培训班新东方培训班_新东方辅导课程 - 新东方搜课平台 (xdf.cn)1.需要逆向的值：
+请求头Sign签名；
+
+2.逆向过程：
+在此案例，很显然，可以通过关键词来搜索，但不用看这个词就很多，所以直接搜索路径再进行关键字搜索；
+搜索后进行...
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:31:55 GMT+0800">2023-11-29 17:31:55</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/2023/11/29/%E6%96%B0%E4%B8%9C%E6%96%B9%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
+                        <a href="/2023/11/29/%E7%83%AF%E7%89%9B%E6%95%B0%E6%8D%AE%E9%80%86%E5%90%91/">
+                            烯牛数据逆向
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            一、烯牛数据最新赛道 · 烯牛数据 (xiniudata.com)1.需要逆向的值：
+表单有payload、sig两个加密的参数；
+返回的数据是密文；
+
+2.响应解密：
+首先进行分析，它的首页面其实是静态的，当你进行下滑或者切换页面时变成了动态页面，...
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:31:38 GMT+0800">2023-11-29 17:31:38</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86-%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">参数加密&amp;响应解密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/2023/11/29/%E7%83%AF%E7%89%9B%E6%95%B0%E6%8D%AE%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
+                        <a href="/2023/11/28/%E4%B8%AD%E5%9B%BD%E8%A7%82%E9%B8%9F%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%BF%83%E9%80%86%E5%90%91/">
+                            中国观鸟记录中心逆向
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            一、中国观鸟记录中心http://www.birdreport.cn/home/activity/page.html1.需要逆向的参数：
+请求头：Sign、Requestid
+表单加密
+响应解密
+
+2.逆向过程：
+首先可以搜索一下sign，发现是没有...
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:32:18 GMT+0800">2023-11-29 17:32:18</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86-%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">参数加密&amp;响应解密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/2023/11/28/%E4%B8%AD%E5%9B%BD%E8%A7%82%E9%B8%9F%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%BF%83%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
+                        <a href="/2023/11/28/%E4%B8%AD%E5%9B%BD%E4%BA%94%E7%9F%BF%E9%80%86%E5%90%91/">
+                            中国五矿逆向
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            一、中国五矿中国五矿集团有限公司采购电子商务平台 (minmetals.com.cn)1.需要逆向的值：
+param，位于表单参数；
+
+2.进行逆向：
+首先观察发的包，可以看到有个public公钥文件，由于没有混淆，所以可以直接搜索param参数来进...
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:32:33 GMT+0800">2023-11-29 17:32:33</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/2023/11/28/%E4%B8%AD%E5%9B%BD%E4%BA%94%E7%9F%BF%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -349,310 +785,6 @@
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/2023/11/28/%E9%98%BF%E9%87%8C%E6%88%BF%E4%BA%A7%E9%80%86%E5%90%91/">
-                            阿里房产逆向
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            一、阿里房产阿里资产-房产频道 (taobao.com)1.需要逆向的参数：
-表单查询字符串参数：sign
-
-2.逆向过程：
-在这里我们依然使用关键词搜索法，搜索sign:，经过调试找到加密位置；
-
-
-
-
-此时我们可以看到sign是等于p，那我们去看...
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:31:21 GMT+0800">2023-11-29 17:31:21</span>
-            </span>
-        
-
-
-        
-
-        
-            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="article-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/11/28/%E9%98%BF%E9%87%8C%E6%88%BF%E4%BA%A7%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/2023/11/28/BTC%E5%8C%BA%E5%9D%97%E9%93%BE%E9%80%86%E5%90%91/">
-                            BTC逆向
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            一、BTCBitcoin浏览器交易列表 | page区块链浏览器 (oklink.com)1.需要逆向的参数：
-请求头：X-Apikey
-
-2.逆向过程：
-首先进行关键字搜索，发现只有一个结果，进行断点并未断住，那么我们可以去跟栈，但是这里跟栈也不是...
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:32:39 GMT+0800">2023-11-29 17:32:39</span>
-            </span>
-        
-
-
-        
-
-        
-            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="article-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/11/28/BTC%E5%8C%BA%E5%9D%97%E9%93%BE%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/2023/11/28/%E5%90%89%E6%9E%97%E9%95%BF%E6%98%A5%E4%BA%A7%E6%9D%83%E9%80%86%E5%90%91/">
-                            吉林长春产权交易中心逆向
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            一、吉林长春产权交易中心http://www.ccprec.com/navCqzr/#/cqzr1.需要逆向的参数：
-请求载荷
-响应数据
-
-2.逆向过程：
-在这里我们直接选择下xhr断点，直接跟栈也是一样的逻辑；
-
-
-
-
-执行分页，断住后我们可以看到...
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:31:00 GMT+0800">2023-11-29 17:31:00</span>
-            </span>
-        
-
-
-        
-
-        
-            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="article-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86-%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">参数加密&amp;响应解密</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/11/28/%E5%90%89%E6%9E%97%E9%95%BF%E6%98%A5%E4%BA%A7%E6%9D%83%E9%80%86%E5%90%91/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/2023/11/28/%E9%80%97%E6%B8%B8%E7%BD%91%E7%99%BB%E5%BD%95/">
-                            逗游网逆向登录
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            一、逗游网https://www.doyo.cn/passport/login?next=https://www.doyo.cn/1.需要逆向的参数：
-表单：password
-
-2.逆向过程：
-直接跟栈；
-
-
-
-
-进入后可以很明显的看到我们的加密位置...
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 29 2023 17:28:51 GMT+0800">2023-11-29 17:28:51</span>
-            </span>
-        
-
-
-        
-
-        
-            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="article-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%99%BB%E5%BD%95%E9%80%86%E5%90%91/">登录逆向</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/11/28/%E9%80%97%E6%B8%B8%E7%BD%91%E7%99%BB%E5%BD%95/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
     </ul>
     
     <div class="paginator border-box flex-center">
@@ -668,14 +800,14 @@
                    type="number"
                    value="3"
                    min="1"
-                   max="3"
-            ><span class="delimiter base-color-size">/</span><span class="base-color-size">3</span>
+                   max="4"
+            ><span class="delimiter base-color-size">/</span><span class="base-color-size">4</span>
         </div>
 
 
-        <div class="btn-wrap">
+        <div class="btn-wrap allowed">
             <a class="jump-btn"
-               href="/"
+               href="/page/4/"
             ><i class="fa-solid fa-chevron-right"></i></a>
         </div>
     </div>
@@ -722,7 +854,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">12.2k</span>
+                    <span class="item-value border-box word">14.2k</span>
                 </span>
             
 
