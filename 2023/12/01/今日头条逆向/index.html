@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="黑羽快斗">
+    
+    <title>
+        
+            今日头条逆向 |
+        
+        黑羽快斗
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/id11.svg">
+    
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#00CCFF","title":"黑羽快斗","author":"黑羽快斗","avatar":"/images/id11.svg","logo":"/images/id11.svg","favicon":"/images/id11.svg"},"menu":{"Home":"/"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"JS逆向案例","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/heiyukuaidou23/","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":"逆向就是找算法"},"post":{"author_badge":{"enable":true,"level_badge":false,"custom_badge":"爬虫逆向"},"word_count":{"wordcount":false,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz","appkey":"ecMeJbcMnBCMLJCsoMzBiL3Q","server_urls":"https://gsbcfirr.lc-cn-n1-shared.com","placeholder":"有问题敬请留言"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"unpkg"},"pjax":{"enable":false},"footer":{"since":2023,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":true,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/id11.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               黑羽快斗
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="article-content-container border-box">
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        今日头条逆向
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/id11.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">黑羽快斗</span>
+                                
+                                    <span class="author-badge">爬虫逆向</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-01 17:07:58</span>
+                <span class="mobile">2023-12-01 17:07</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Fri Dec 01 2023 17:09:06 GMT+0800">2023-12-01 17:09:06</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h3 id="一、今日头条https-www-toutiao-com-wid-1701413037322"><a href="#一、今日头条https-www-toutiao-com-wid-1701413037322" class="headerlink" title="一、今日头条https://www.toutiao.com/?wid=1701413037322"></a>一、今日头条<a class="link"   target="_blank" rel="noopener" href="https://www.toutiao.com/?wid=1701413037322" >https://www.toutiao.com/?wid=1701413037322<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的参数："><a href="#1-需要逆向的参数：" class="headerlink" title="1.需要逆向的参数："></a>1.需要逆向的参数：</h4><ul>
+<li>表单参数：**_signature**</li>
+</ul>
+<h4 id="2-逆向过程："><a href="#2-逆向过程：" class="headerlink" title="2.逆向过程："></a>2.逆向过程：</h4><ul>
+<li>直接搜索_signature关键字，可以定位到也就几个结果，我们可以看看有没有我们的加密位置，经过寻找我们可以找到几个加密位置，直接全部打上断点，但是我们需要明白应该在哪个位置打断点；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201150550927-1701414354719-1.png"
+                      alt="image-20231201150550927" style="zoom:67%;" 
+                >
+
+<ul>
+<li>在我们找到的位置，这里有两个关键字，第一个很明显不是，那么我们看第二个，它等于n，那么我们就去n的生成位置打断点，并且它也很符合加密逻辑；</li>
+<li>果然是可以断住的，经过调试可以发现这里就是我们的参数生成位置，但在这里需要注意的是，我们确定了它是加密位置，但在我们进行断点释放的时候，发现程序并没有走完，而是又来了一个接口，在这种情况下我们就需要确定哪一个是我们需要的接口；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201150957203-1701414598830-3.png"
+                      alt="image-20231201150957203" style="zoom:67%;" 
+                >
+
+<ul>
+<li>使用postman进行测试，发现这一个接口生成的参数才能正确的进行请求，那么这一个就是我们需要的接口；</li>
+<li>接下来我们就可以进入函数的内部看看具体做了什么，并在函数的返回位置打上断点；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201151805143-1701415087178-5.png"
+                      alt="image-20231201151805143" style="zoom:67%;" 
+                >
+
+<ul>
+<li>那么我们就可以来分析一下这段代码做了什么事情，还是在返回的地方打上断点；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201154806699-1701416888729-7.png"
+                      alt="image-20231201154806699" style="zoom:67%;" 
+                >
+
+<ul>
+<li>首先我们可以看到这是一个逗号表达式，那我么就可以看一下前半部分是什么输出，它的输出是undefined，在js里它的bool值就是false，那么很明显它执行的是逗号后面的代码，那我们就去看第二句；那其实也很明显，就类似于做了判断，看他们分别输出什么；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201155208273-1701417129942-9.png"
+                      alt="image-20231201155208273" style="zoom:67%;" 
+                >
+
+<ul>
+<li>在这里很明显可以看出它的输出值是false，那么就继续往后走，但在这里需要注意的是，即使它输出的是false，那它对于n的赋值，也是执行了的，void 0 &#x3D;&#x3D;&#x3D; n很明显也是false，null &#x3D;&#x3D;&#x3D; (r &#x3D; n.sign)也是false，那就继续往后走，后面是一个三元判断；</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void 0 === r ? void 0 : r.call(n, o)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在这个表达式里，问好左边的内容如果是true，那么久执行：左边的内容，如果是false则反之；在这里肯定是false，因为在前面很明显进行了r的赋值，那它很明显不等于0，所以最终的加密方法就是r.call(n, o)；</li>
+<li>那么r现在可以进行分析，它等价于window.byted_acrawler.sign，这个方法，逐渐赋值；n就是我们的方法不用管，o就是我们的参数，所以最终加密方法：window.byted_acrawler.sign(o)；</li>
+<li>此时可以直接在控制台输出一下进行验证，然后进行测试；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201160457552-1701417899181-11.png"
+                      alt="image-20231201160457552" style="zoom:67%;" 
+                >
+
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201160531649-1701417932998-13.png"
+                      alt="image-20231201160531649" style="zoom:67%;" 
+                >
+
+<ul>
+<li>那么我们直接进入这个方法，在控制台输出之后可以直接进入；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201160622441-1701417983994-15.png"
+                      alt="image-20231201160622441" style="zoom:67%;" 
+                >
+
+<ul>
+<li>进入后可以发现这是一个jsvmp，所以我们大概率需要进行补环境操作，而且遇到这种很明显进入的地方无法执行加密并且整个文件的代码量也并不多时，直接将全部复制下来；</li>
+<li>拿下来后直接运行代码肯定会报错，而在第一行就进行了一个window的判断，而且它肯定不为空，所以我们直接补上window&#x3D;global;</li>
+<li>再次运行报错Cannot read properties of undefined (reading ‘referrer’)，那么这个就很明显是环境的问题了，在这里我们可以在报错的地方打上条件断点，然后进行判断，A &#x3D;&#x3D;&#x3D; ‘referrer’，断住后在控制台输出即可补上环境；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201162135644-1701418897177-17.png"
+                      alt="image-20231201162135644" style="zoom:67%;" 
+                >
+
+<ul>
+<li>运行后再次报错sign，这代表着我们拿下来的方法其实并没有在我们的程序里面，那么我们这里的解决方案就是：</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201163040320-1701419441794-19.png"
+                      alt="image-20231201163040320" style="zoom: 67%;" 
+                >
+
+<ul>
+<li>打印最后结尾的环境信息，可以看到具体是哪里出了问题，同时在浏览器控制台打印这一段，对比一下具体是哪一个方法除了问题，然后将它删掉；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201163338445-1701419620012-21.png"
+                      alt="image-20231201163338445" style="zoom:67%;" 
+                >
+
+<ul>
+<li>删掉之后和浏览器一致了，但在这里可以看到有cookie字段，我们很明显没有给它这个环境，而浏览器有，所以我们需要补上这个cookie；</li>
+<li>运行后报错href，同样的道理直接去调试，打上条件断点，在这里直接将location全部补上；</li>
+<li>再次运行报错useragent，同样去拿下来运行即可；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/今日头条逆向img/image-20231201170503213-1701421504689-23.png"
+                      alt="image-20231201170503213" style="zoom:67%;" 
+                >
+
+<ul>
+<li>至此参数加密完成；但在拿o值的时候，必须要记住是不是我们需要的那个数据包；</li>
+</ul>
+
+                </div>
+
+                
+                        
+<div class="article-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="post-title border-box text-ellipsis">
+                今日头条逆向
+            </div>
+
+            <div class="post-link border-box text-ellipsis">
+                2023/12/01/今日头条逆向/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">黑羽快斗</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2023-12-01 17:07</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/11/30/%E4%BF%A1%E8%9E%8D%E8%B4%A2%E5%AF%8C%E9%80%86%E5%90%91%E7%99%BB%E5%BD%95/"
+                                   title="信融财富逆向登录"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">信融财富逆向登录</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script 
+                src="//unpkg.com/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script 
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: 'gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz',
+              appKey: 'ecMeJbcMnBCMLJCsoMzBiL3Q',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '有问题敬请留言',
+              lang: 'zh-CN'.toLowerCase()
+            }
+
+            if ('https://gsbcfirr.lc-cn-n1-shared.com') {
+              config.serverURLs = 'https://gsbcfirr.lc-cn-n1-shared.com'
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1https-www-toutiao-com-wid-1701413037322"><span class="nav-number">1.</span> <span class="nav-text">一、今日头条https:&#x2F;&#x2F;www.toutiao.com&#x2F;?wid&#x3D;1701413037322</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">黑羽快斗</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+                <div class="deploy-info info-item default">
+                    
+                        本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服务
+                        
+                </div>
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">总字数</span>
+                    <span class="item-value border-box word">15.4k</span>
+                </span>
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1https-www-toutiao-com-wid-1701413037322"><span class="nav-number">1.</span> <span class="nav-text">一、今日头条https:&#x2F;&#x2F;www.toutiao.com&#x2F;?wid&#x3D;1701413037322</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/utils.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/header-shrink.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/back2top.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/toggle-theme.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/code-block.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/main.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/local-search.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/lazyload.js"></script>
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/copyright-info.js"></script>
+        
+
+        <!-- share -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
