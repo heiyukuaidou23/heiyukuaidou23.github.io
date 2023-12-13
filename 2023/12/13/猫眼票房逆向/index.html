@@ -9,7 +9,7 @@
     
     <title>
         
-            中国土地网逆向 |
+            猫眼电影实时票房逆向 |
         
         黑羽快斗
     </title>
@@ -128,7 +128,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        中国土地网逆向
+                        猫眼电影实时票房逆向
                     </div>
                 
 
@@ -157,13 +157,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-28 19:40:23</span>
-                <span class="mobile">2023-11-28 19:40</span>
+                <span class="pc">2023-12-13 22:31:48</span>
+                <span class="mobile">2023-12-13 22:31</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Nov 29 2023 17:32:25 GMT+0800">2023-11-29 17:32:25</span>
+                <span class="pc" data-updated="Wed Dec 13 2023 22:32:45 GMT+0800">2023-12-13 22:32:45</span>
             </span>
         
 
@@ -194,7 +194,7 @@
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
             </span>
         
         
@@ -215,92 +215,76 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h3 id="一、中国土地网中国土地市场网-landchina-com"><a href="#一、中国土地网中国土地市场网-landchina-com" class="headerlink" title="一、中国土地网中国土地市场网 (landchina.com)"></a>一、中国土地网<a class="link"   target="_blank" rel="noopener" href="https://www.landchina.com/#/resultNotice" >中国土地市场网 (landchina.com)<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的参数："><a href="#1-需要逆向的参数：" class="headerlink" title="1.需要逆向的参数："></a>1.需要逆向的参数：</h4><ul>
-<li>请求头Hash；</li>
+                    <h3 id="一、猫眼电影实时票房https-piaofang-maoyan-com-dashboard"><a href="#一、猫眼电影实时票房https-piaofang-maoyan-com-dashboard" class="headerlink" title="一、猫眼电影实时票房https://piaofang.maoyan.com/dashboard"></a>一、猫眼电影实时票房<a class="link"   target="_blank" rel="noopener" href="https://piaofang.maoyan.com/dashboard" >https://piaofang.maoyan.com/dashboard<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的参数："><a href="#1-需要逆向的参数：" class="headerlink" title="1.需要逆向的参数："></a>1.需要逆向的参数：</h4><ul>
+<li>表单参数：</li>
 </ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/猫眼票房逆向img/image-20231210231342068-1702221223108-5.png"
+                      alt="image-20231210231342068" style="zoom:67%;" 
+                >
+
 <h4 id="2-逆向过程："><a href="#2-逆向过程：" class="headerlink" title="2.逆向过程："></a>2.逆向过程：</h4><ul>
-<li>在开始逆向时，hash关键词可以告诉我们什么，它必然不简单，使用.length方法来判断一下它的长度，结果是64位，由此可以得知它大概是sha加密算法；md5一般则是32位；（消息摘要算法）</li>
-<li>首先进行关键字搜索，搜索结果太多，这种方法不好使；在此我们可以使用追栈的方法；</li>
-<li>从启动程序进入，打上断点，进行分页；此时断住，</li>
+<li>首先分析，uuid在python就可以实现，所以没有必要逆向，时间戳肯定会变，其次index是变的，signkey也是变化的，所以我们首先来看signkey这个参数，直接搜索看看，只有一个文件，进去打断点就可以了；</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\中国土地网img\1"
-                      style="zoom:67%;" 
+                     data-src="/images/猫眼票房逆向img/image-20231210231538462-1702221341256-7.png"
+                      alt="image-20231210231538462" style="zoom:67%;" 
                 >
 
 <ul>
-<li>在右侧堆栈我们可以看到有异步回调，在request里一般包含了拦截器，一般又分为响应和请求拦截器，但是很显然响应拦截器跟我们没什么关系；</li>
-<li>点击request进入，打上断点，进行分页，然后观察作用域的p里面包含的方法，</li>
+<li>打上断点程序自己会断住，因为它是实时更新的，所以我们就可以来进行分析了，在这里可以看到我们的参数等于f，所以就可以去找f的生成位置；</li>
+<li>在这里我们分析一下，**c[i(269)]**这种形式，里面的东西大概率会是一个字符串，我们可以输出看看；</li>
+</ul>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/%E7%8C%AB%E7%9C%BC%E7%A5%A8%E6%88%BF%E9%80%86%E5%90%91img/image-20231210231902833-1702221544273-12.png"
+                      alt="image-20231210231902833"
+                ></p>
+<ul>
+<li>可以看到，他就是一个replace，在这里我们可以将后半部分进行输出，同时也可以看到是对c做了处理，我们对比一下它们会有什么不同；</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\中国土地网img\2"
-                      alt="image-20231116150014989" style="zoom:67%;" 
+                     data-src="/images/猫眼票房逆向img/image-20231210232058646-1702221659753-16.png"
+                      alt="image-20231210232058646" style="zoom:67%;" 
                 >
 
 <ul>
-<li>从里面的方法进去(0，1)其余是响应拦截器，可以看出是一个请求拦截器，在拦截器处进行断点，此时放掉上一步的断点；进行分页，此时断点位置应该是return处；</li>
+<li>可以看到，它们是一模一样的，所以这段代码就可以简化成一个c，那么整个加密就是：</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\中国土地网img\3"
-                      alt="image-20231116150417362" style="zoom:67%;" 
+                     data-src="/images/猫眼票房逆向img/image-20231210232151701-1702221712922-18.png"
+                      alt="image-20231210232151701" style="zoom:67%;" 
                 >
 
 <ul>
-<li>断住后将return的内容在控制台打印，发现是一个类似于数组的东西，此时我们将其toSting()转变一下，可以看出就是我们需要的东西；</li>
-<li>分析到此处，其实可以明白，这即是我们需要的加密方法；将主体方法扣下来；并将需要的参数取值拿下来；</li>
-<li>此时可以看出，n即为我们的加密函数，所以我们进去一探究竟；</li>
+<li>那么我们就可以去看看这个方法了，进去就可以看到一个关键字，就是md5，那么我们就去看看是不是标准加密；</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\中国土地网img\4"
-                      alt="image-20231116151459769" style="zoom:67%;" 
+                     data-src="/images/猫眼票房逆向img/image-20231210232440289-1702221881720-20.png"
+                      alt="image-20231210232440289" style="zoom:67%;" 
                 >
 
 <ul>
-<li>进入函数之后我们发现他是为一个初始化方法，在一般情况，此时我们点击箭头处进行下一步，观察它在哪一个对象进行的初始化操作，观察作用域；</li>
+<li>经过测试其实它就是标准加密，所以这个参数我们就很容易就能生成；</li>
+<li>然后就是index，其实他就是一个随机数，那么我们将代码拿下来就可以了；最终的代码如下：</li>
 </ul>
 <img  
                      lazyload
                      alt="image"
-                     data-src="\images\\中国土地网img\5"
-                      alt="image-20231116151733685" style="zoom:67%;" 
+                     data-src="/images/猫眼票房逆向img/image-20231210233218836-1702222340291-22.png"
+                      alt="image-20231210233218836" style="zoom:67%;" 
                 >
-
-<ul>
-<li>我们可以发现，此时作用域有值了，我们继续下一步走出这个方法；</li>
-</ul>
-<img  
-                     lazyload
-                     alt="image"
-                     data-src="\images\\中国土地网img\6"
-                      alt="image-20231116152411193" style="zoom:67%;" 
-                >
-
-
-
-<ul>
-<li>走出之后很显然，是SHA256，与我们刚开始的猜想是一致的；那接下来就很显然了，导入标准算法包，然后编写一个sha256加密算法，将n替换，即可完成；</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const CryptJS = require(&#x27;crypto-js&#x27;)</span><br><span class="line">function sha256(text)&#123;</span><br><span class="line">    encryt1 = CryptJS.SHA256(text).toString()</span><br><span class="line">    return encryt1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<img  
-                     lazyload
-                     alt="image"
-                     data-src="\images\\中国土地网img\7"
-                      alt="image-20231116152822446" style="zoom:67%;" 
-                >
-
-<ul>
-<li>自此加密完成；</li>
-</ul>
-
                 </div>
 
                 
@@ -309,11 +293,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                中国土地网逆向
+                猫眼电影实时票房逆向
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/11/28/中国土地网逆向/
+                2023/12/13/猫眼票房逆向/
             </div>
         </div>
 
@@ -329,7 +313,7 @@
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-11-28 19:40</div>
+                <div class="content">2023-12-13 22:31</div>
             </div>
 
 
@@ -402,31 +386,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/28/%E4%B8%AD%E5%9B%BD%E4%BA%94%E7%9F%BF%E9%80%86%E5%90%91/"
-                                   title="中国五矿逆向"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">中国五矿逆向</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/28/%E6%8E%8C%E4%B8%8A%E9%AB%98%E8%80%83%E9%80%86%E5%90%91/"
-                                   title="掌上高考逆向"
+                                   href="/2023/12/13/%E4%B8%AD%E5%9B%BD%E5%B9%B3%E7%85%A4%E7%A5%9E%E9%A9%AC%E6%8A%A5%E9%80%86%E5%90%91/"
+                                   title="中国平煤神马报逆向"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">掌上高考逆向</span>
+                                        <span class="post-nav-title-item text-ellipsis">中国平煤神马报逆向</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -536,7 +504,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%AD%E5%9B%BD%E5%9C%9F%E5%9C%B0%E7%BD%91%E4%B8%AD%E5%9B%BD%E5%9C%9F%E5%9C%B0%E5%B8%82%E5%9C%BA%E7%BD%91-landchina-com"><span class="nav-number">1.</span> <span class="nav-text">一、中国土地网中国土地市场网 (landchina.com)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E5%AE%9E%E6%97%B6%E7%A5%A8%E6%88%BFhttps-piaofang-maoyan-com-dashboard"><span class="nav-number">1.</span> <span class="nav-text">一、猫眼电影实时票房https:&#x2F;&#x2F;piaofang.maoyan.com&#x2F;dashboard</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -725,7 +693,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%AD%E5%9B%BD%E5%9C%9F%E5%9C%B0%E7%BD%91%E4%B8%AD%E5%9B%BD%E5%9C%9F%E5%9C%B0%E5%B8%82%E5%9C%BA%E7%BD%91-landchina-com"><span class="nav-number">1.</span> <span class="nav-text">一、中国土地网中国土地市场网 (landchina.com)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E5%AE%9E%E6%97%B6%E7%A5%A8%E6%88%BFhttps-piaofang-maoyan-com-dashboard"><span class="nav-number">1.</span> <span class="nav-text">一、猫眼电影实时票房https:&#x2F;&#x2F;piaofang.maoyan.com&#x2F;dashboard</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向过程：</span></a></li></ol></li></ol>
     </div>
 </div>
 
