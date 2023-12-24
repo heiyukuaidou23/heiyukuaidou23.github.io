@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="黑羽快斗">
+    
+    <title>
+        
+            产业政策大数据平台逆向 |
+        
+        黑羽快斗
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/id11.svg">
+    
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#00CCFF","title":"黑羽快斗","author":"黑羽快斗","avatar":"/images/id11.svg","logo":"/images/id11.svg","favicon":"/images/id11.svg"},"menu":{"Home":"/"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"JS逆向案例","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/heiyukuaidou23/","weixin":"2865488943@qq.com","qq":"2865488943@qq.com","weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":"JS逆向就是找算法的过程"},"post":{"author_badge":{"enable":true,"level_badge":false,"custom_badge":"爬虫逆向"},"word_count":{"wordcount":false,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz","appkey":"ecMeJbcMnBCMLJCsoMzBiL3Q","server_urls":"https://gsbcfirr.lc-cn-n1-shared.com","placeholder":"有问题敬请留言"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"unpkg"},"pjax":{"enable":false},"footer":{"since":2023,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":true,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/id11.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               黑羽快斗
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="article-content-container border-box">
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        产业政策大数据平台逆向
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/id11.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">黑羽快斗</span>
+                                
+                                    <span class="author-badge">爬虫逆向</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-24 23:57:45</span>
+                <span class="mobile">2023-12-24 23:57</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Dec 24 2023 23:58:30 GMT+0800">2023-12-24 23:58:30</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86/">参数加密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h3 id="一、产业政策大数据平台http-www-spolicy-com-typePolicy-id-6-name-E5-85-AC-E7-A4-BA-E5-85-AC-E5-91-8A"><a href="#一、产业政策大数据平台http-www-spolicy-com-typePolicy-id-6-name-E5-85-AC-E7-A4-BA-E5-85-AC-E5-91-8A" class="headerlink" title="一、产业政策大数据平台http://www.spolicy.com/typePolicy?id=6&amp;name=%E5%85%AC%E7%A4%BA%E5%85%AC%E5%91%8A"></a>一、产业政策大数据平台<a class="link"   target="_blank" rel="noopener" href="http://www.spolicy.com/typePolicy?id=6&name=%E5%85%AC%E7%A4%BA%E5%85%AC%E5%91%8A" >http://www.spolicy.com/typePolicy?id=6&amp;name=%E5%85%AC%E7%A4%BA%E5%85%AC%E5%91%8A<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的参数："><a href="#1-需要逆向的参数：" class="headerlink" title="1.需要逆向的参数："></a>1.需要逆向的参数：</h4><ul>
+<li>表单参数；</li>
+</ul>
+<h4 id="2-逆向思路："><a href="#2-逆向思路：" class="headerlink" title="2.逆向思路："></a>2.逆向思路：</h4><ul>
+<li>首先打开抓包页面就可以看到一个无限debugger，在这里我们使用hook的方式来过；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219160801811-1702973284632-1.png"
+                      alt="image-20231219160801811" style="zoom:67%;" 
+                >
+
+<ul>
+<li>hook代码如下：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 变量 构造器</span><br><span class="line">AAA = Function.prototype.constructor;</span><br><span class="line">Function.prototype.constructor = function (a) &#123;</span><br><span class="line">    if (a == &#x27;debugger&#x27;)&#123;</span><br><span class="line">        return function ()&#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        return AAA(a);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>或者去李玺老师博客找更好的hook代码：<a class="link"   target="_blank" rel="noopener" href="http://cnlans.com/lx/tools/jshook" >http://cnlans.com/lx/tools/jshook<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>将这段代码复制到控制台运行或者新建代码段执行，我推荐第二种；执行后即可过掉debuuger；</p>
+</li>
+<li><p>我们向下翻页，可以发现一个没有见过的加密参数；</p>
+</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219161117634-1702973479017-3.png"
+                      alt="image-20231219161117634" style="zoom:67%;" 
+                >
+
+<ul>
+<li>有一点像乱码，那么我们就要去找到它的生成位置；在以往来说，这种表单参数没有关键词的时候，且是异步加载时，我们可以去找他的拦截器关键词，但在这里没有办法直接搜索，因为它是经过混淆的，但这个思想在其他地方适用；</li>
+<li>在这里我们就可以去下xhr断点，之后进行分页，此时断住；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219161444492-1702973685722-5.png"
+                      alt="image-20231219161444492" style="zoom:67%;" 
+                >
+
+<ul>
+<li>点击异步栈的第一栈，也就是箭头的指向；进入之后打上断点，并将xhr断点放掉；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219161601282-1702973762391-7.png"
+                      alt="image-20231219161601282" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时观察s，它里面会有拦截器，进入内部看，可以看出是经过混淆的；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219162223573-1702974145073-9.png"
+                      alt="image-20231219162223573" style="zoom:67%;" 
+                >
+
+<ul>
+<li>我们需要的是请求拦截器，所以我们就需要看当前是否是我们需要的位置；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219162307801-1702974188973-11.png"
+                      alt="image-20231219162307801" style="zoom:67%;" 
+                >
+
+<ul>
+<li>很明显这就是请求拦截器，也可以去其他几个方法看看，因为它有时候不止一个拦截器，我们就不去看了，把外面的断点放掉，然后进入这个断点；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219163047974-1702974649574-13.png"
+                      alt="image-20231219163047974" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到此时我们的参数还是明文，那我们就需要点击跳出函数来看它在哪里变成的密文；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219163247419-1702974768991-15.png"
+                      alt="image-20231219163247419" style="zoom:67%;" 
+                >
+
+<ul>
+<li>点击跳出一次后参数任然是明文，所以继续跳出；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219163335183-1702974816773-17.png"
+                      alt="image-20231219163335183" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时作用域没有值了，我们再跳一次；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219163415181-1702974856865-19.png"
+                      alt="image-20231219163415181" style="zoom:67%;" 
+                >
+
+<ul>
+<li>再跳一次就可以发现我们的参数生成了，那我们就需要去前面找加密方法；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219163459314-1702974900570-21.png"
+                      alt="image-20231219163459314" style="zoom:67%;" 
+                >
+
+<ul>
+<li>那么有没有可能是明文消失的前一栈呢，很有可能，我们找拦截器的原因就是生成参数的位置大多都会在那里，既然明文消失的最后一次出现是在拦截器，那我们理应去那里找，再次触发请求；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219163728015-1702975049606-23.png"
+                      alt="image-20231219163728015" style="zoom:67%;" 
+                >
+
+<ul>
+<li>来到上一个位置就可以发现参数就是在这里加的密，那我们依次在控制台还原里面的混淆；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219164010117-1702975211545-25.png"
+                      alt="image-20231219164010117" style="zoom:67%;" 
+                >
+
+<ul>
+<li>将改写后的代码都拿下来，</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219164052964-1702975254239-27.png"
+                      alt="image-20231219164052964" style="zoom:67%;" 
+                >
+
+<ul>
+<li>这即是我们的加密方法，那么此时我们需要做的是就是找到这三个方法是吧，首先去找这个encode方法，点击进去；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219164301416-1702975382831-29.png"
+                      alt="image-20231219164301416" style="zoom:67%;" 
+                >
+
+<ul>
+<li>进入一个虚拟文件，那么我们的方法就是这个policy，将它拿下来，注意此时不要拿return，只拿方法；</li>
+<li>我们观察这个方法，传进去两个参数，将断点打进去，可以看到m是我们的参数，w不知道，那我们可以看到它说如果w不存在，就创建，那我们直接不传，让它生成就好了；</li>
+<li>但这里会报错创建方法不存在，那我们也需要进去看看；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219164716817-1702975638318-31.png"
+                      alt="image-20231219164716817" style="zoom:67%;" 
+                >
+
+<ul>
+<li>进入之后可以看到一个很熟悉的东西，webpack，那在这里我们的思路其实就是将它导出再调用；我们就需要去找到他所在的大方法里，也就是顶格的方法；</li>
+<li>在这里我的方法是将整段复制到pad++里，然后比较方便找，语言选择js，然后折叠所有层次；再搜索我们的方法；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219165028850-1702975830242-33.png"
+                      alt="image-20231219165028850" style="zoom:67%;" 
+                >
+
+<ul>
+<li>这样就比较好拿我们的方法，我们拿下来后进行改写；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219165206680-1702975928058-35.png"
+                      alt="image-20231219165206680" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时运行一下会报错commonjsGlobal，我们在控制台输出它，发现他就是一个window对象，那我们直接全改成window，然后再定义一个window对象；</li>
+<li>此时我们先注释掉其他的代码，只留下这个webpack看看能否运行，发现是没有报错的，那我们就可以导出函数了，在顶部顶一个zt变量，用来接受加载器；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219165653559-1702976215038-37.png"
+                      alt="image-20231219165653559" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时我们就可以试着打印一下zt，看看有没有接收到方法；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219165815142-1702976296401-39.png"
+                      alt="image-20231219165815142" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到成功的拿到了方法，所以create函数就可以改写为zt..Writer.create()了，此时直接打印一下看能否出值；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219170006770-1702976407955-41.png"
+                      alt="image-20231219170006770" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到出值了，那么后面两个方法应该就在上面的webpack里，当然这里还会有一个报错，会说参数类型错误，经过调试其实就是参数中的  “policyType”: ‘6’,这个6必须是字符串形式；</li>
+<li>和网页上进行对比看看是否是正确的；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/产业政策大数据平台img/image-20231219170345388-1702976628818-43.png"
+                      alt="image-20231219170345388" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到结果是一致的，那么参数逆向也就完成了；</li>
+</ul>
+
+                </div>
+
+                
+                        
+<div class="article-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="post-title border-box text-ellipsis">
+                产业政策大数据平台逆向
+            </div>
+
+            <div class="post-link border-box text-ellipsis">
+                2023/12/24/产业政策大数据平台/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">黑羽快斗</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2023-12-24 23:57</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/12/24/%E4%B8%81%E9%A6%99%E5%9B%AD%E9%80%86%E5%90%91/"
+                                   title="丁香园逆向"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">丁香园逆向</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/12/24/virustotal%E6%90%9C%E7%B4%A2/"
+                                   title="virustotal搜索逆向"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">virustotal搜索逆向</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script 
+                src="//unpkg.com/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script 
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: 'gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz',
+              appKey: 'ecMeJbcMnBCMLJCsoMzBiL3Q',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '有问题敬请留言',
+              lang: 'zh-CN'.toLowerCase()
+            }
+
+            if ('https://gsbcfirr.lc-cn-n1-shared.com') {
+              config.serverURLs = 'https://gsbcfirr.lc-cn-n1-shared.com'
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BA%A7%E4%B8%9A%E6%94%BF%E7%AD%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0http-www-spolicy-com-typePolicy-id-6-name-E5-85-AC-E7-A4-BA-E5-85-AC-E5-91-8A"><span class="nav-number">1.</span> <span class="nav-text">一、产业政策大数据平台http:&#x2F;&#x2F;www.spolicy.com&#x2F;typePolicy?id&#x3D;6&amp;name&#x3D;%E5%85%AC%E7%A4%BA%E5%85%AC%E5%91%8A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向思路：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">黑羽快斗</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+                <div class="deploy-info info-item default">
+                    
+                        本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服务
+                        
+                </div>
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">总字数</span>
+                    <span class="item-value border-box word">28.1k</span>
+                </span>
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BA%A7%E4%B8%9A%E6%94%BF%E7%AD%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0http-www-spolicy-com-typePolicy-id-6-name-E5-85-AC-E7-A4-BA-E5-85-AC-E5-91-8A"><span class="nav-number">1.</span> <span class="nav-text">一、产业政策大数据平台http:&#x2F;&#x2F;www.spolicy.com&#x2F;typePolicy?id&#x3D;6&amp;name&#x3D;%E5%85%AC%E7%A4%BA%E5%85%AC%E5%91%8A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向思路：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/utils.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/header-shrink.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/back2top.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/toggle-theme.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/code-block.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/main.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/local-search.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/lazyload.js"></script>
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/copyright-info.js"></script>
+        
+
+        <!-- share -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
