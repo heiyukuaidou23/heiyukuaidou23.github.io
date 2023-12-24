@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="黑羽快斗">
+    
+    <title>
+        
+            空气质量在线检测分析平台逆向 |
+        
+        黑羽快斗
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/id11.svg">
+    
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@4.0.1/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#00CCFF","title":"黑羽快斗","author":"黑羽快斗","avatar":"/images/id11.svg","logo":"/images/id11.svg","favicon":"/images/id11.svg"},"menu":{"Home":"/"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"JS逆向案例","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/heiyukuaidou23/","weixin":"2865488943@qq.com","qq":"2865488943@qq.com","weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":"JS逆向就是找算法的过程"},"post":{"author_badge":{"enable":true,"level_badge":false,"custom_badge":"爬虫逆向"},"word_count":{"wordcount":false,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz","appkey":"ecMeJbcMnBCMLJCsoMzBiL3Q","server_urls":"https://gsbcfirr.lc-cn-n1-shared.com","placeholder":"有问题敬请留言"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"unpkg"},"pjax":{"enable":false},"footer":{"since":2023,"word_count":true,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":true,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/id11.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               黑羽快斗
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="article-content-container border-box">
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        空气质量在线检测分析平台逆向
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/id11.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">黑羽快斗</span>
+                                
+                                    <span class="author-badge">爬虫逆向</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-24 16:33:00</span>
+                <span class="mobile">2023-12-24 16:33</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Dec 24 2023 16:33:37 GMT+0800">2023-12-24 16:33:37</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%8F%82%E6%95%B0%E5%8A%A0%E5%AF%86-%E5%93%8D%E5%BA%94%E8%A7%A3%E5%AF%86/">参数加密&amp;响应解密</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h3 id="一、空气质量在线检测分析平台https-www-aqistudy-cn"><a href="#一、空气质量在线检测分析平台https-www-aqistudy-cn" class="headerlink" title="一、空气质量在线检测分析平台https://www.aqistudy.cn/"></a>一、空气质量在线检测分析平台<a class="link"   target="_blank" rel="noopener" href="https://www.aqistudy.cn/" >https://www.aqistudy.cn/<i class="fas fa-external-link-alt"></i></a></h3><h4 id="1-需要逆向的参数："><a href="#1-需要逆向的参数：" class="headerlink" title="1.需要逆向的参数："></a>1.需要逆向的参数：</h4><ul>
+<li>表单参数、响应解密；</li>
+</ul>
+<h4 id="2-逆向思路："><a href="#2-逆向思路：" class="headerlink" title="2.逆向思路："></a>2.逆向思路：</h4><ul>
+<li>首先我们会遇到第一关；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231220235234434-1703087557728-1.png"
+                      alt="image-20231220235234434" style="zoom:67%;" 
+                >
+
+<ul>
+<li>我们利用其他方式打开开发者工具；也会有其他的错误；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221163451011-1703147694595-1.png"
+                      alt="image-20231221163451011" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时会进入一个无限debugger，此时我们hook掉它来试一试，发现依旧无法通过；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221163557475-1703147758609-3.png"
+                      alt="image-20231221163557475" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时我们就可以想一想为什么无法停住，那么此时我们就需要将断点逐步释放，去抓一下网页加载的包，通过观察，我们发现了一个叫做php的文件，里面有一些关键词；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221164116022-1703148077233-5.png"
+                      alt="image-20231221164116022" style="zoom:67%;" 
+                >
+
+<ul>
+<li>我们都知道eval的作用就是将里面的字符串给执行一下，那么里面的内容是什么，貌似是看不懂的东西，我们在控制台执行一下；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221164252390-1703148173850-7.png"
+                      alt="image-20231221164252390" style="zoom:67%;" 
+                >
+
+<ul>
+<li>有点意思了，这好像就是我们看到的提示，那么这一段内容就会被执行，那么我们怎么把它关闭呢，在这里我们就需要用到一个本地替换；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221164446907-1703148288222-9.png"
+                      alt="image-20231221164446907" style="zoom:67%;" 
+                >
+
+<ul>
+<li>将目标文件在来源面板打开，打开之后右键这个文件名，选择替换内容；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221164535090-1703148338019-11.png"
+                      alt="image-20231221164535090" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时这个文件就与我们本地挂钩，我们就可以去尝试将目标代码注释看看效果；发现可以成功的抓包了，此时我们就可以抓到类似的数据包；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221165120376-1703148681645-13.png"
+                      alt="image-20231221165120376" style="zoom:67%;" 
+                >
+
+<ul>
+<li>这个包有很长的数据，大概就是我们需要的数据，那就证明数据是加密的，所以参数也是加了密的；那么这里开始我们才算真正的过了网页的反调试；</li>
+<li>我们首先来解决响应的解密，在做这个事情之前，我们可以发现我们替换的内容好像还有一段不知名内容，我们打上断点刷新整个页面看看能不能断住；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221165731349-1703149053317-15.png"
+                      alt="image-20231221165731349" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时可以断住，那么我们进入这个方法内部看看；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221165821153-1703149102600-17.png"
+                      alt="image-20231221165821153" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到，一个很庞大的方法体系，里面有各种方法，但我们也不知道哪一个是解密函数，我们就可以回到断点位置，单步执行看她做了什么事情；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221170104220-1703149265606-19.png"
+                      alt="image-20231221170104220" style="zoom:67%;" 
+                >
+
+<ul>
+<li>那么这虽然是解密了，但并不是我们需要的数据，我们再次刷新，进入方法里，在类似解密的返回处打上断点，看看最终会停留在哪里；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221170349360-1703149430628-21.png"
+                      alt="image-20231221170349360" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时停留在了这里，但我们输出结果发现貌似并没有解密，再次释放程序，看他下一步走哪里；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221170500828-1703149502281-23.png"
+                      alt="image-20231221170500828" style="zoom:67%;" 
+                >
+
+<ul>
+<li>很明显，这里应该就是我们数据解密的位置，那我们就可以在这个位置下断点，同时将其他位置的断点放掉；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221170901865-1703149743228-25.png"
+                      alt="image-20231221170901865" style="zoom:67%;" 
+                >
+
+<ul>
+<li>经过调试我们可以发现在这里数据进行了解密，将这两句方法拿下来；此时就可以看到肯定是缺了AES和BASE64这两个东西，但他们貌似不是标准的方法，所以我们去看他是怎么定义的；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221171244585-1703149965944-27.png"
+                      alt="image-20231221171244585" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到它是定义了方法的，我们直接拿下来就可以了，同时BASE64方法也是同理；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221171349475-1703150030629-29.png"
+                      alt="image-20231221171349475" style="zoom:67%;" 
+                >
+
+<ul>
+<li>但在这里又有不同，它new了一个Base，注意这里两个base并不是一样的，需要注意，这里要额外去拿这个方法；将缺失的都补上，此时会报错CryptoJS，这里我们就可以使用标准算法库；</li>
+<li>复制一段密文，看看本地能否解密成功；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221172202528-1703150524178-31.png"
+                      alt="image-20231221172202528" style="zoom:67%;" 
+                >
+
+<ul>
+<li>可以看到数据成功的解密了，那么我们接下来就需要去找到参数的加密位置；</li>
+<li>在这里我们同样可以进行分析，在解密方法里同样有很多加密方法，我们去打上断点，看程序会走到哪里；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221172734214-1703150855887-33.png"
+                      alt="image-20231221172734214" style="zoom:67%;" 
+                >
+
+<ul>
+<li>此时可以看到传进来的是明文，得到的确实密文，那么这里 大概率就是加密位置，我们去和已经生成的参数对比一下看看长度是否一致；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221172835572-1703150917429-35.png"
+                      alt="image-20231221172835572" style="zoom:67%;" 
+                >
+
+<ul>
+<li>长度是一致的，那么这里应该就是加密位置，我们同样将它拿下来；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221173223184-1703151144639-37.png"
+                      alt="image-20231221173223184" style="zoom:67%;" 
+                >
+
+<ul>
+<li>将方法补齐之后发现可以得到结果，但是位数始终是和网页上对不上的，那这个时候我们就需要注意一个问题，我们在使用本地替换md5的时候，需要将它的结果转成字符串一下，修改之后结果为正确的；</li>
+</ul>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="/images/空气质量在线检测分析平台img/image-20231221174020384-1703151624684-39.png"
+                      alt="image-20231221174020384" style="zoom:67%;" 
+                >
+
+<ul>
+<li>那么参数和响应就都逆向完成了；</li>
+</ul>
+
+                </div>
+
+                
+                        
+<div class="article-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="post-title border-box text-ellipsis">
+                空气质量在线检测分析平台逆向
+            </div>
+
+            <div class="post-link border-box text-ellipsis">
+                2023/12/24/空气质量在线检测分析平台/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">黑羽快斗</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2023-12-24 16:33</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/web%E9%80%86%E5%90%91/">web逆向</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/12/24/%E4%B8%83%E9%BA%A6%E6%95%B0%E6%8D%AE/"
+                                   title="七麦数据逆向"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">七麦数据逆向</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script 
+                src="//unpkg.com/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script 
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: 'gSbcFirrJAXP9i8JAG3Ngq1w-gzGzoHsz',
+              appKey: 'ecMeJbcMnBCMLJCsoMzBiL3Q',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '有问题敬请留言',
+              lang: 'zh-CN'.toLowerCase()
+            }
+
+            if ('https://gsbcfirr.lc-cn-n1-shared.com') {
+              config.serverURLs = 'https://gsbcfirr.lc-cn-n1-shared.com'
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E5%9C%A8%E7%BA%BF%E6%A3%80%E6%B5%8B%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0https-www-aqistudy-cn"><span class="nav-number">1.</span> <span class="nav-text">一、空气质量在线检测分析平台https:&#x2F;&#x2F;www.aqistudy.cn&#x2F;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向思路：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">黑羽快斗</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+                <div class="deploy-info info-item default">
+                    
+                        本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服务
+                        
+                </div>
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">总字数</span>
+                    <span class="item-value border-box word">23.9k</span>
+                </span>
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E5%9C%A8%E7%BA%BF%E6%A3%80%E6%B5%8B%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0https-www-aqistudy-cn"><span class="nav-number">1.</span> <span class="nav-text">一、空气质量在线检测分析平台https:&#x2F;&#x2F;www.aqistudy.cn&#x2F;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9C%80%E8%A6%81%E9%80%86%E5%90%91%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.需要逆向的参数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%80%86%E5%90%91%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.逆向思路：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/utils.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/header-shrink.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/back2top.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/toggle-theme.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/code-block.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/main.js"></script><script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/local-search.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/lazyload.js"></script>
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/copyright-info.js"></script>
+        
+
+        <!-- share -->
+        
+            <script src="//unpkg.com/hexo-theme-keep@4.0.1/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
